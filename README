@@ -1,0 +1,9 @@
+TODO:
+- Conception de l'entreprise virtuelle
+- Analyse (comprendre) de l'exploit et de la faille que le botnet utilisera
+- Documenter, tester et implémenter un script DDOS
+- Lister les actions que réalisera le client (victime botnet)
+- Lister les données que doit récupérer le client (victime botnet)
+- Lister les stats (genre nbr de machines zombie actives) qu'on retrouvera sur le serveur
+- Coder et réunir les scripts permettant de récupérer ces données
+- Script CE
