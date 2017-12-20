@@ -10,7 +10,7 @@ int main()
 {
 	cout << "Hello je suis un botnet" << endl;
 	system("PAUSE");
-
+	//bonjour
     return 0;
 }
 
