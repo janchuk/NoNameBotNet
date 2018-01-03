@@ -1,0 +1,7 @@
+C:\Users\Raphaël\source\repos\Botnet\Botnet\obj\Debug\BotnetServer.csproj.CoreCompileInputs.cache
+C:\Users\Raphaël\source\repos\Botnet\Botnet\obj\Debug\BotnetServer.csprojResolveAssemblyReference.cache
+C:\Users\Raphaël\source\repos\Botnet\Botnet\bin\Debug\BotnetServer.exe.config
+C:\Users\Raphaël\source\repos\Botnet\Botnet\bin\Debug\BotnetServer.exe
+C:\Users\Raphaël\source\repos\Botnet\Botnet\bin\Debug\BotnetServer.pdb
+C:\Users\Raphaël\source\repos\Botnet\Botnet\obj\Debug\BotnetServer.exe
+C:\Users\Raphaël\source\repos\Botnet\Botnet\obj\Debug\BotnetServer.pdb
