@@ -5,3 +5,10 @@ C:\Users\Raphaël\source\repos\Botnet\Botnet\bin\Debug\BotnetServer.exe
 C:\Users\Raphaël\source\repos\Botnet\Botnet\bin\Debug\BotnetServer.pdb
 C:\Users\Raphaël\source\repos\Botnet\Botnet\obj\Debug\BotnetServer.exe
 C:\Users\Raphaël\source\repos\Botnet\Botnet\obj\Debug\BotnetServer.pdb
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\Botnet\bin\Debug\BotnetServer.exe.config
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\Botnet\bin\Debug\BotnetServer.exe
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\Botnet\bin\Debug\BotnetServer.pdb
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer.csprojResolveAssemblyReference.cache
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer.csproj.CoreCompileInputs.cache
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer.exe
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer.pdb

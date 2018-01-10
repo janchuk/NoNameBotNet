@@ -5,3 +5,10 @@ C:\Users\Raphaël\source\repos\Botnet\BotnetClient\obj\Debug\BotnetClient.csproj
 C:\Users\Raphaël\source\repos\Botnet\BotnetClient\obj\Debug\BotnetClient.csproj.CoreCompileInputs.cache
 C:\Users\Raphaël\source\repos\Botnet\BotnetClient\obj\Debug\BotnetClient.exe
 C:\Users\Raphaël\source\repos\Botnet\BotnetClient\obj\Debug\BotnetClient.pdb
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\BotnetClient\bin\Debug\BotnetClient.exe.config
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\BotnetClient\bin\Debug\BotnetClient.exe
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\BotnetClient\bin\Debug\BotnetClient.pdb
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\BotnetClient\obj\Debug\BotnetClient.csprojResolveAssemblyReference.cache
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\BotnetClient\obj\Debug\BotnetClient.csproj.CoreCompileInputs.cache
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\BotnetClient\obj\Debug\BotnetClient.exe
+D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\BotnetClient\obj\Debug\BotnetClient.pdb
