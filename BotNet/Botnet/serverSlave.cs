@@ -16,7 +16,7 @@ using Botnet;
 
 namespace Botnet    //espace de nom
 {
-    class Program   //une classe (dans une classe, il y a des fonctions)
+    class serverSlave   //une classe (dans une classe, il y a des fonctions)
     {
         static void Main(string[] args)  // c'est un main (fonction)
         {

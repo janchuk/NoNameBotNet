@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace BotnetClient
 {
-    class Program
+    class master
     {
         public static Socket senderSock;
 
