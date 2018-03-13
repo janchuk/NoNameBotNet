@@ -1,7 +1,0 @@
-C:\Users\Raphaël\source\repos\BotNet\Botnet\bin\Debug\Botnet.exe.config
-C:\Users\Raphaël\source\repos\BotNet\Botnet\bin\Debug\Botnet.exe
-C:\Users\Raphaël\source\repos\BotNet\Botnet\bin\Debug\Botnet.pdb
-C:\Users\Raphaël\source\repos\BotNet\Botnet\obj\Debug\Botnet.csprojResolveAssemblyReference.cache
-C:\Users\Raphaël\source\repos\BotNet\Botnet\obj\Debug\Botnet.csproj.CoreCompileInputs.cache
-C:\Users\Raphaël\source\repos\BotNet\Botnet\obj\Debug\Botnet.exe
-C:\Users\Raphaël\source\repos\BotNet\Botnet\obj\Debug\Botnet.pdb
