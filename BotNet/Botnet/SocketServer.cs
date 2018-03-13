@@ -66,7 +66,7 @@ namespace Botnet
             }
             catch (Exception exc)
             {
-                exception = exc;
+                status = exc.ToString();
             }
         }
 
@@ -87,7 +87,7 @@ namespace Botnet
             }
             catch (Exception exc)
             {
-                exception = exc;
+                status = exc.ToString();
             }
         }
 
@@ -130,7 +130,7 @@ namespace Botnet
             }
             catch (Exception exc)
             {
-                exception = exc;
+                status = exc.ToString();
             }
         }
 
@@ -184,7 +184,7 @@ namespace Botnet
             }
             catch (Exception exc)
             {
-                exception = exc;
+                status = exc.ToString();
             }
         }
 
@@ -207,7 +207,7 @@ namespace Botnet
             }
             catch (Exception exc)
             {
-                exception = exc;
+                status = exc.ToString();
             }
         }
 
@@ -225,7 +225,7 @@ namespace Botnet
             }
             catch (Exception exc)
             {
-                exception = exc;
+                status = exc.ToString();
             }
         }
 
@@ -243,7 +243,7 @@ namespace Botnet
             }
             catch (Exception exc)
             {
-                exception = exc;
+                status = exc.ToString();
             }
         }
     }

