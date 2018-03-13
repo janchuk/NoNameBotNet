@@ -331,3 +331,7 @@ ASALocalRun/
 
 # NVidia Nsight GPU debugger configuration file
 *.nvuser
+BotNet/.vs/BotNet/v15/.suo
+BotNet/.vs/BotNet/v15/.suo
+BotNet/.vs/BotNet/v15/sqlite3/storage.ide-shm
+BotNet/.vs/BotNet/v15/sqlite3/storage.ide-wal
