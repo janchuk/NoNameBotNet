@@ -12,6 +12,7 @@ using System.IO;
 using System.Reflection;
 using Botnet;
 //using System.Windows.Threading;
+ 
 
 namespace Botnet    //espace de nom
 {
@@ -19,18 +20,25 @@ namespace Botnet    //espace de nom
     {
         static void Main(string[] args)  // c'est un main (fonction)
         {
+            /*
             string path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             Console.WriteLine(path);
 
             RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             rk.SetValue(AppDomain.CurrentDomain.FriendlyName, path);
-
+            */
 
             Console.WriteLine("coucou je suis le serveur");     //Permet d'écrire sur le console
             Console.ReadKey();      //Va attendre une touchedu clavier pour lancer la suite (Read
 
-            SocketServer sS  = new SocketServer();
-            
+            SocketServer ss  = new SocketServer();
+            ss.Start(2107);
+            Console.WriteLine(ss.status);
+            ss.Listen();
+            Console.WriteLine(ss.status);
+            Console.ReadKey();
+
+
 
         }
 

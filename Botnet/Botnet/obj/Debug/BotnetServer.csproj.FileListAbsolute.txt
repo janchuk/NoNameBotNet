@@ -12,3 +12,10 @@ D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer
 D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer.csproj.CoreCompileInputs.cache
 D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer.exe
 D:\Users\yann\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer.pdb
+C:\Users\Rapha\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer.csprojResolveAssemblyReference.cache
+C:\Users\Rapha\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer.csproj.CoreCompileInputs.cache
+C:\Users\Rapha\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer.exe
+C:\Users\Rapha\Documents\GitHub\NoNameBotNet\BotNet\Botnet\obj\Debug\BotnetServer.pdb
+C:\Users\Rapha\Documents\GitHub\NoNameBotNet\BotNet\Botnet\bin\Debug\BotnetServer.exe.config
+C:\Users\Rapha\Documents\GitHub\NoNameBotNet\BotNet\Botnet\bin\Debug\BotnetServer.exe
+C:\Users\Rapha\Documents\GitHub\NoNameBotNet\BotNet\Botnet\bin\Debug\BotnetServer.pdb

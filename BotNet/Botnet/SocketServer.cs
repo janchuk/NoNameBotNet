@@ -16,7 +16,7 @@ namespace Botnet
         Socket handler;
         string messageToSend;
         string messageToReceive;
-        string status;
+        public string status;
         Exception exception;
 
         public SocketServer()
@@ -24,7 +24,7 @@ namespace Botnet
 
         }
 
-        private void Start()
+        public void Start(int port)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace Botnet
                 IPAddress ipAddr = ipHost.AddressList[0];
 
                 // Creates a network endpoint 
-                ipEndPoint = new IPEndPoint(ipAddr, 4510);
+                ipEndPoint = new IPEndPoint(ipAddr, port);
 
                 // Create one Socket object to listen the incoming connection 
                 sListener = new Socket(
@@ -70,7 +70,7 @@ namespace Botnet
             }
         }
 
-        private void Listen()
+        public void Listen()
         {
             try
             {
@@ -188,7 +188,7 @@ namespace Botnet
             }
         }
 
-        private void Send_Click()
+        public void Send()
         {
             try
             {
@@ -229,7 +229,7 @@ namespace Botnet
             }
         }
 
-        private void Close_Click()
+        public void Close()
         {
             try
             {

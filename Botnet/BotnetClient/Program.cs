@@ -19,7 +19,10 @@ namespace BotnetClient
         {
             Console.WriteLine("coucou je suis le client");
             Console.ReadKey();
-
+            SocketClient sc = new SocketClient();
+            sc.Connect(2107);
+            Console.WriteLine(sc.status);
+            Console.ReadKey();
 
         }
 

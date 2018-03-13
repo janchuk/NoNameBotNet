@@ -16,10 +16,10 @@ namespace BotnetClient
         string messageToSend;
         string messageToReceive;
         Exception excexption;
-        string status;
+        public string status;
 
 
-        private void Connect()
+        public void Connect(int port)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace BotnetClient
                 IPAddress ipAddr = ipHost.AddressList[0];
 
                 // Creates a network endpoint 
-                IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, 4510);
+                IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, port);
 
                 // Create one Socket object to setup Tcp connection 
                 senderSock = new Socket(
@@ -64,7 +64,7 @@ namespace BotnetClient
 
         }
 
-        private void Send()
+        public void Send()
         {
             try
             {
@@ -86,7 +86,7 @@ namespace BotnetClient
             }
         }
 
-        private void ReceiveDataFromServer()
+        public void ReceiveDataFromServer()
         {
             try
             {
@@ -111,7 +111,7 @@ namespace BotnetClient
             }
         }
 
-        private void Disconnect()
+        public void Disconnect()
         {
             try
             {
