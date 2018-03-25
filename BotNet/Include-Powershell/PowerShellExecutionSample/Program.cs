@@ -107,7 +107,7 @@ namespace PowerShellExecutionSample
             {
                 // use "AddScript" to add the contents of a script file to the end of the execution pipeline.
                 // use "AddCommand" to add individual commands/cmdlets to the end of the execution pipeline.
-                PowerShellInstance.AddScript("C:\Users\Paul\Desktop\SSID-key.ps1");
+                PowerShellInstance.AddScript("C:/Users/Paul/Desktop/SSID-key.ps1");
 
                 // use "AddParameter" to add a single parameter to the last command/script on the pipeline.
                 // PowerShellInstance.AddParameter("param1", "parameter 1 value!");
