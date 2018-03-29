@@ -8,12 +8,17 @@ using System.Threading.Tasks;
 
 namespace Botnet
 {
-    class Connectors
+    class ClientConnectors
     {
         public static string status;
         public static IPAddress iPAddress;
         public static int port;
 
+        public ClientConnectors(IPAddress ipadd, int p)
+        {
+            iPAddress = ipadd;
+            port = p;
+        }
         static void SendData()
         {
             // Data buffer for incoming data.  
@@ -24,8 +29,8 @@ namespace Botnet
             {
                 // Establish the remote endpoint for the socket.  
                 // This example uses port 11000 on the local computer.  
-                IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
-                IPEndPoint remoteEP = new IPEndPoint(ipAddress, 2107);
+                IPAddress ipAddress = iPAddress;
+                IPEndPoint remoteEP = new IPEndPoint(ipAddress, port);
 
                 // Create a TCP/IP  socket.  
                 Socket sender = new Socket(ipAddress.AddressFamily,

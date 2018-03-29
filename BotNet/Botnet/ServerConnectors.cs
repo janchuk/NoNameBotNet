@@ -8,20 +8,25 @@ using System.Threading.Tasks;
 
 namespace Botnet
 {
-    class ServerConnectors
+    public class ServerConnectors
     {
         public static string status;
         public static IPAddress iPAddress;
         public static int port;
 
+        public ServerConnectors(IPAddress ipadd, int p)
+        {
+            iPAddress = ipadd;
+            port = p;
+        }
         static void ListenAndReceiveData() 
         {
 
             Socket ss = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            IPAddress ipaddr = IPAddress.Parse("127.0.0.1");
+            IPAddress ipaddr = iPAddress;
 
-            IPEndPoint ipEnd = new IPEndPoint(ipaddr, 2107);
+            IPEndPoint ipEnd = new IPEndPoint(ipaddr, port);
             byte[] buff = new byte[1024];
             string data = null;
 
@@ -34,7 +39,7 @@ namespace Botnet
 
                 while (true)
                 {
-                    Console.WriteLine("Waiting for a connection...");
+                    status = "Waiting for a connection...";
                     Socket handler = ss.Accept();
 
                     while (true)
@@ -49,13 +54,13 @@ namespace Botnet
                         }
                     }
 
-                    Console.WriteLine("Text received : {0}", data);
+                    status = "Text received : {0}" + data;
                 }
             }
 
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                status = e.Message;
             }
 
 

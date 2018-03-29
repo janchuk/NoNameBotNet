@@ -12,10 +12,10 @@ namespace PowerShellExecutionSample
     {
         static void Main(string[] args)
         {
-            PowerShellExecutor t = new PowerShellExecutor();
-            
+            PowerShellExecutor monObjetPowerShell = new PowerShellExecutor();
+
             // scenario 1 (synchronous execution)
-            t.ExecuteSynchronously();
+            monObjetPowerShell.ExecuteSynchronously();
 
             // scenario 2 (asynchronous execution)
             //t.ExecuteAsynchronously();

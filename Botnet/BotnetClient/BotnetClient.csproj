@@ -43,8 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientMaster.cs" />
+    <Compile Include="ClientConnectors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SocketClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
