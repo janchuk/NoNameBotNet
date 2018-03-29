@@ -1,26 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net;
-using Microsoft.Win32;
-using System.Net.Sockets;
-//using System.Windows.Controls;
-using System.Threading;
-using System.IO;
-using System.Reflection;
-using Botnet;
-//using System.Windows.Threading;
- 
 
-namespace Botnet    //espace de nom
+namespace Botnet
 {
-    class serverSlave   //une classe (dans une classe, il y a des fonctions)
+    class ServerConnectors
     {
-        static void Main(string[] args)  // c'est un main (fonction)
+        public static string status;
+        public static IPAddress iPAddress;
+        public static int port;
+
+        static void ListenAndReceiveData() 
         {
-            
+
             Socket ss = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             IPAddress ipaddr = IPAddress.Parse("127.0.0.1");
@@ -36,12 +32,12 @@ namespace Botnet    //espace de nom
                 ss.Bind(ipEnd);
                 ss.Listen(1);
 
-                while(true)
+                while (true)
                 {
                     Console.WriteLine("Waiting for a connection...");
                     Socket handler = ss.Accept();
 
-                    while(true)
+                    while (true)
                     {
                         buff = new byte[1024];
                         int bytesRec = handler.Receive(buff);
@@ -57,17 +53,13 @@ namespace Botnet    //espace de nom
                 }
             }
 
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-            
-           
-           
+
+
+
         }
-
-
-
     }
-
 }

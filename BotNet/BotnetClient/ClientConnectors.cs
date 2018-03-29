@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
-//using System.Windows.Controls;
-using System.Threading;
-//using System.Windows.Threading;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace BotnetClient
+namespace Botnet
 {
-    class ClientMaster
+    class Connectors
     {
-        public static Socket senderSock;
+        public static string status;
+        public static IPAddress iPAddress;
+        public static int port;
 
-        static void Main(string[] args)
+        static void SendData()
         {
             // Data buffer for incoming data.  
             byte[] bytes = new byte[1024];
@@ -32,8 +31,6 @@ namespace BotnetClient
                 Socket sender = new Socket(ipAddress.AddressFamily,
                     SocketType.Stream, ProtocolType.Tcp);
 
-                Console.WriteLine("Press enter to send data");
-                Console.ReadKey();
                 // Connect the socket to the remote endpoint. Catch any errors.  
                 try
                 {
@@ -60,24 +57,22 @@ namespace BotnetClient
                 }
                 catch (ArgumentNullException ane)
                 {
-                    Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
+                    status = "ArgumentNullException : {0}" + ane.ToString();
                 }
                 catch (SocketException se)
                 {
-                    Console.WriteLine("SocketException : {0}", se.ToString());
+                    status = "SocketException : {0}", se.ToString();
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Unexpected exception : {0}", e.ToString());
+                    status = "Unexpected exception : {0}", e.ToString();
                 }
 
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                status =  e.ToString();
             }
         }
-
-
     }
 }
