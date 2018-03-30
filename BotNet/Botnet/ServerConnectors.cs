@@ -19,19 +19,15 @@ namespace Botnet
             iPAddress = ipadd;
             port = p;
         }
-        static void ListenAndReceiveData() 
+
+        public static void ListenAndReceiveData() 
         {
-
             Socket ss = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
             IPAddress ipaddr = iPAddress;
-
             IPEndPoint ipEnd = new IPEndPoint(ipaddr, port);
             byte[] buff = new byte[1024];
             string data = null;
 
-            Console.WriteLine("Press enter to listen");
-            Console.ReadKey();
             try
             {
                 ss.Bind(ipEnd);
@@ -62,8 +58,6 @@ namespace Botnet
             {
                 status = e.Message;
             }
-
-
 
         }
     }

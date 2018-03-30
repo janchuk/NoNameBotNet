@@ -33,16 +33,14 @@ namespace Botnet
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, port);
 
                 // Create a TCP/IP  socket.  
-                Socket sender = new Socket(ipAddress.AddressFamily,
-                    SocketType.Stream, ProtocolType.Tcp);
+                Socket sender = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
                 // Connect the socket to the remote endpoint. Catch any errors.  
                 try
                 {
                     sender.Connect(remoteEP);
 
-                    Console.WriteLine("Socket connected to {0}",
-                        sender.RemoteEndPoint.ToString());
+                    Console.WriteLine("Socket connected to {0}", sender.RemoteEndPoint.ToString());
                     Console.ReadKey();
                     // Encode the data string into a byte array.  
                     byte[] msg = Encoding.ASCII.GetBytes("This is a test<EOF>");
@@ -52,25 +50,24 @@ namespace Botnet
 
                     // Receive the response from the remote device.  
                     int bytesRec = sender.Receive(bytes);
-                    Console.WriteLine("Echoed test = {0}",
-                        Encoding.ASCII.GetString(bytes, 0, bytesRec));
+                    Console.WriteLine("Echoed test = {0}", Encoding.ASCII.GetString(bytes, 0, bytesRec));
 
                     // Release the socket.  
                     sender.Shutdown(SocketShutdown.Both);
                     sender.Close();
 
                 }
-                catch (ArgumentNullException ane)
+                catch (ArgumentNullException e)
                 {
-                    status = "ArgumentNullException : {0}" + ane.ToString();
+                    status = "ArgumentNullException : {0}" + e.ToString();
                 }
-                catch (SocketException se)
+                catch (SocketException e)
                 {
-                    status = "SocketException : {0}", se.ToString();
+                    status = "SocketException : {0}" + e.ToString();
                 }
                 catch (Exception e)
                 {
-                    status = "Unexpected exception : {0}", e.ToString();
+                    status = "Unexpected exception : {0}" + e.ToString();
                 }
 
             }
