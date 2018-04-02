@@ -12,10 +12,10 @@ namespace PowerShellExecutionSample
     {
         static void Main(string[] args)
         {
-            PowerShellExecutor monObjetPowerShell = new PowerShellExecutor();
-
+            PowerShellExecutor t = new PowerShellExecutor();
+            
             // scenario 1 (synchronous execution)
-            monObjetPowerShell.ExecuteSynchronously();
+            t.ExecuteSynchronously();
 
             // scenario 2 (asynchronous execution)
             //t.ExecuteAsynchronously();
@@ -114,26 +114,7 @@ namespace PowerShellExecutionSample
 
                 // invoke execution on the pipeline (collecting output)
                 Collection<PSObject> PSOutput = PowerShellInstance.Invoke();
-
-                // check the other output streams (for example, the error stream)
-                if (PowerShellInstance.Streams.Error.Count > 0)
-                {
-                    // error records were written to the error stream.
-                    // do something with the items found.
-                }
-
-                // loop through each output object item
-                foreach (PSObject outputItem in PSOutput)
-                {
-                    // if null object was dumped to the pipeline during the script then a null
-                    // object may be present here. check for null to prevent potential NRE.
-                    if (outputItem != null)
-                    {
-                        //TODO: do something with the output item 
-                        Console.WriteLine(outputItem.BaseObject.GetType().FullName);
-                        Console.WriteLine(outputItem.BaseObject.ToString() + "\n");
-                    }
-                }
+                
             }
         }
 
