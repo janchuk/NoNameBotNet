@@ -337,3 +337,5 @@ BotNet/.vs/BotNet/v15/sqlite3/storage.ide-shm
 BotNet/.vs/BotNet/v15/sqlite3/storage.ide-wal
 BotNet/.vs/BotNet/v15/.suo
 *.ide-wal
+
+*.ide
