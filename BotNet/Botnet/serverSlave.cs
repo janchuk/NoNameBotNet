@@ -21,8 +21,9 @@ namespace Botnet    //espace de nom
         static void Main(string[] args)  // c'est un main (fonction)
         {
 
-            ServerConnectors Sc = new ServerConnectors(IPAddress.Parse("127.0.0.1"), 2107);
-            
+            ServerConnectors sc = new ServerConnectors(IPAddress.Parse("127.0.0.1"), 2107);
+            sc.ListenAndReceiveData();
+            Console.WriteLine(sc.status);
             //Use class mathod after
            
            

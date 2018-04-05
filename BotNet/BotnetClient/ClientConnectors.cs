@@ -10,16 +10,18 @@ namespace Botnet
 {
     class ClientConnectors
     {
-        public static string status;
-        public static IPAddress iPAddress;
-        public static int port;
+        public string status;
+        public IPAddress iPAddress;
+        public int port;
+        public string message;
 
         public ClientConnectors(IPAddress ipadd, int p)
         {
             iPAddress = ipadd;
             port = p;
         }
-        static void SendData()
+
+        public void SendData(string message)
         {
             // Data buffer for incoming data.  
             byte[] bytes = new byte[1024];
@@ -43,7 +45,7 @@ namespace Botnet
                     Console.WriteLine("Socket connected to {0}", sender.RemoteEndPoint.ToString());
                     Console.ReadKey();
                     // Encode the data string into a byte array.  
-                    byte[] msg = Encoding.ASCII.GetBytes("This is a test<EOF>");
+                    byte[] msg = Encoding.ASCII.GetBytes(message + "<EOF>");
 
                     // Send the data through the socket.  
                     int bytesSent = sender.Send(msg);
