@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DDos.cs" />
     <Compile Include="Initialization.cs" />
     <Compile Include="ServerConnectors.cs" />
     <Compile Include="serverSlave.cs" />
