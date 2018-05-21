@@ -14,12 +14,12 @@ namespace BotnetClient
 {
     class ClientMaster
     {
-        public static Socket senderSock;
 
         static void Main(string[] args)
         {
             ClientConnectors cn = new ClientConnectors(IPAddress.Parse("127.0.0.1"), 2107);
-            cn.SendData("<ARG1><ARG1>coucou");
+            string msg = "coucou";
+            cn.SendData(msg);
             Console.ReadKey();
             //Use class method after
         }

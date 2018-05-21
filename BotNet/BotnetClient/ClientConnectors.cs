@@ -45,7 +45,7 @@ namespace Botnet
                     Console.WriteLine("Socket connected to {0}", sender.RemoteEndPoint.ToString());
                     Console.ReadKey();
                     // Encode the data string into a byte array.  
-                    byte[] msg = Encoding.ASCII.GetBytes(message + "<EOF>");
+                    byte[] msg = Encoding.ASCII.GetBytes("<SOC>" +message + "<EOC>");
 
                     // Send the data through the socket.  
                     int bytesSent = sender.Send(msg);

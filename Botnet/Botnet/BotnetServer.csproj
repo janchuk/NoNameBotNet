@@ -45,6 +45,7 @@
     <Compile Include="DDos.cs" />
     <Compile Include="Executor.cs" />
     <Compile Include="Initialization.cs" />
+    <Compile Include="ProtocolController.cs" />
     <Compile Include="ServerConnectors.cs" />
     <Compile Include="serverSlave.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

