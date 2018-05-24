@@ -1,9 +1,20 @@
-TODO:
-- Conception de l'entreprise virtuelle
-- Analyse (comprendre) de l'exploit et de la faille que le botnet utilisera
-- Documenter, tester et implémenter un script DDOS
-- Lister les actions que réalisera le client (victime botnet)
-- Lister les données que doit récupérer le client (victime botnet)
-- Lister les stats (genre nbr de machines zombie actives) qu'on retrouvera sur le serveur
-- Coder et réunir les scripts permettant de récupérer ces données
-- Script CE
+ ####Déploiement environement  :
+- Démarrer Mysql et executer le script /CNC/database.sql
+- Démarrer un serveur Apache avec les fichiers .php du répertoire /CNC
+
+###Tâches pour le 02/06:
+Zombie (C#):
+- KeyLogger **Asynchrone** (**Paul**)
+- DDOS modulable (ping, tcp, udp, temps DDOS...) **Asynchrone** (**Karl**)
+- Auto-déploiement et persistance du zombie (**Yann**)
+- Execution des ordres du CNC ou Executor (**Raph**)
+- Etude du besoin du Socket Asynchrone (**Raph, Paul**)
+- Information Gathering ()
+- Auto-Spread ()
+
+CNC (PHP):
+- Interface CNC
+- Socket Asynchrone (**Raph**)
+- ...
+
+

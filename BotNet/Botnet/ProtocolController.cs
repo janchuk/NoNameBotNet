@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Botnet
 {
+    //Cette classe sert à contrôle l'intégrité des données reçu et d'en extraire les données utiles
     class ProtocolController
     {
         public string data = "";
@@ -22,8 +23,8 @@ namespace Botnet
             //Si la donnée est valide on continue son traitement
             if (DataIntegrity(data) == true)
             {
-                //Réponse au CNC:
-                response = "<SOC>OK<EOC>";
+                action = GetAction();
+                target = GetTarget();
                 GetArguments();
             }
 
@@ -53,23 +54,24 @@ namespace Botnet
             }
 
             //Si tout va bien
+            response = "<SOC>Integrity OK<EOC>";
             return true;
         }
 
         //Extraire l'action de la requête
-        public string GetAction()
+        private string GetAction()
         {
             return data.Substring(data.IndexOf("<CMD>") + 5, data.IndexOf("</CMD>") - data.IndexOf("<CMD>") - 5);
         }
 
         //Extraire l'action de la requête
-        public string GetTarget()
+        private string GetTarget()
         {
             return data.Substring(data.IndexOf("<TARGET>") + 8, data.IndexOf("</TARGET>") - data.IndexOf("<TARGET>") - 8);
         }
 
         //Extraire l'action de la requête
-        public void GetArguments()
+        private void GetArguments()
         {
             //Regex qui selectionne dans une string <ARG*>xxxx</ARG*>
             string pattern = @"<ARG\d>\w*<\/ARG\d>";

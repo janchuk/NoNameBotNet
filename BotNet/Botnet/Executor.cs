@@ -12,12 +12,9 @@ namespace Botnet
         public string data = "";
         public string response = "";
 
-        void protocolDecoder(string received)
+        Executor()
         {
-            
-            int nbArg = Regex.Matches(received, "<ARG>").Count;
-            int nbArg1 = Regex.Matches(received, "<CMD>").Count;
-            
+
         }
 
         

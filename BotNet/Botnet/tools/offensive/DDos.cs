@@ -87,6 +87,7 @@ namespace Botnet
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return false;
             }
         }
