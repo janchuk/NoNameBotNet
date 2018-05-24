@@ -1,8 +1,8 @@
- ####Déploiement environement  :
+#### Déploiement environement  :
 - Démarrer Mysql et executer le script /CNC/database.sql
 - Démarrer un serveur Apache avec les fichiers .php du répertoire /CNC
 
-###Tâches pour le 02/06:
+### Tâches pour le 02/06:
 Zombie (C#):
 - KeyLogger **Asynchrone** (**Paul**)
 - DDOS modulable (ping, tcp, udp, temps DDOS...) **Asynchrone** (**Karl**)
@@ -16,5 +16,3 @@ CNC (PHP):
 - Interface CNC
 - Socket Asynchrone (**Raph**)
 - ...
-
-
