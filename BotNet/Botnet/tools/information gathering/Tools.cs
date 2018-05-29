@@ -16,6 +16,7 @@ namespace Botnet
         public string machine_name = "";
         public string os = "";
         public string user_session = "";
+        public string bonjour = "";
 
         public Tools()
         {

