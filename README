@@ -1,3 +1,6 @@
+# PROJET POUR ETUDE #
+#  Plus particulièrement, nous ne saurions être tenus responsables de tout dommage, matériel ou immatériel causé à vos équipements informatiques et aux données qui y sont stockées, ni des conséquences pouvant en découler sur votre activité personnelle, professionnelle ou commerciale. #
+
 #### Déploiement environement  :
 - Démarrer Mysql et executer le script /CNC/database.sql
 - Démarrer un serveur Apache avec les fichiers .php du répertoire /CNC
