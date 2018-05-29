@@ -8,7 +8,7 @@ namespace Test_lecture_ecriture
 {
     class Program
     {
-        static void Main(string[] arsgs)
+        static void mainTraitement(string[] arsgs)
         {
             int counter = 0;
             string line;
