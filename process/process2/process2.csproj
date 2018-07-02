@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AC925773-78E8-4266-BB1E-339D03F6057F}</ProjectGuid>
+    <ProjectGuid>{82EFDD51-C97F-4D18-8610-E901230A8025}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>process</RootNamespace>
-    <AssemblyName>process</AssemblyName>
+    <RootNamespace>process2</RootNamespace>
+    <AssemblyName>process2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program_process.cs" />
+    <Compile Include="Program_process2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
